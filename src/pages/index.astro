@@ -1,8 +1,10 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import JsonViewer from "../components/JsonViewer";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import json from "../data/me.json";
 ---
 
 <!doctype html>
@@ -12,8 +14,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     </head>
     <body>
         <Header />
-        <main>
-            <h1>👨‍💻 Welcome to My Developer Portfolio!</h1>
+        <main style="height: 100vh; width: 100vw; overflow: auto;">
+
+            <!-- <h1>👨‍💻 Welcome to My Developer Portfolio!</h1>
             <p>
                 Hello! I am a passionate developer with over 5 years of experience in building robust and scalable web applications. I am eager to build innovative solutions and continuously improve my skills.
             </p>
@@ -37,7 +40,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             </ul>
             <p>
                 I am always looking for new challenges and opportunities to grow. Feel free to explore my projects and get in touch if you have any questions or collaboration ideas.
-            </p>
+            </p> -->
+
+            <JsonViewer data={json} client:load client:only />
+            <!-- ... rest of your content ... -->
         </main>
         <Footer />
     </body>
